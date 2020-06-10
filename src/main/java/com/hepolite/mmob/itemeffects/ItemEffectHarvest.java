@@ -49,7 +49,7 @@ public class ItemEffectHarvest extends ItemEffect
 		Block centerBlock = event.getClickedBlock();
 		Material centerType = centerBlock.getType();
 
-		if (centerType == Material.DIRT || centerType == Material.GRASS || centerType == Material.MYCEL)
+		if (centerType == Material.DIRT || centerType == Material.GRASS || centerType == Material.MYCELIUM)
 		{
 			int blocksTilled = 0;
 			for (int x = -2; x <= 2; x++)
@@ -59,14 +59,14 @@ public class ItemEffectHarvest extends ItemEffect
 						// If the block is tillable, convert to soil, but only if exposed to air
 						Block block = centerBlock.getRelative(x, y, z);
 						Material type = block.getType();
-						if ((type == Material.DIRT || type == Material.GRASS || type == Material.MYCEL) && block.getRelative(0, 1, 0).getType() == Material.AIR)
+						if ((type == Material.DIRT || type == Material.GRASS || type == Material.MYCELIUM) && block.getRelative(0, 1, 0).getType() == Material.AIR)
 						{
 							BlockBreakEvent logBlockEvent = new BlockBreakEvent(block, player);
 							Common.postEvent(logBlockEvent);
 							if (!logBlockEvent.isCancelled())
 							{
 								blocksTilled++;
-								block.setType(Material.SOIL);
+								block.setType(Material.DIRT);
 							}
 						}
 					}
@@ -77,7 +77,7 @@ public class ItemEffectHarvest extends ItemEffect
 		}
 
 		// Find crops to harvest and replant
-		else if (centerType == Material.CROPS || centerType == Material.POTATO || centerType == Material.CARROT)
+		else if (centerType == Material.FARMLAND || centerType == Material.POTATO || centerType == Material.CARROT)
 		{
 			int blocksHarvested = 0;
 			int wheat = 0, seeds = 0, potatoes = 0, carrots = 0;
@@ -89,7 +89,7 @@ public class ItemEffectHarvest extends ItemEffect
 						// If the block is some crop and fully grown, revert to original state and drop crops
 						Block block = centerBlock.getRelative(x, y, z);
 						Material type = block.getType();
-						if (type != Material.CROPS && type != Material.POTATO && type != Material.CARROT)
+						if (type != Material.FARMLAND && type != Material.POTATO && type != Material.CARROT)
 							continue;
 
 						Byte meta = block.getData();
@@ -99,7 +99,7 @@ public class ItemEffectHarvest extends ItemEffect
 
 							// Harvest the crops and reset the growth
 							block.setData((byte) 0); // The meta of freshly planted crops is 0
-							if (type == Material.CROPS)
+							if (type == Material.FARMLAND)
 							{
 								wheat += 1 + random.nextInt(2);
 								seeds += random.nextInt(3);
@@ -116,11 +116,11 @@ public class ItemEffectHarvest extends ItemEffect
 			if (wheat != 0)
 				location.getWorld().dropItem(location, new ItemStack(Material.WHEAT, wheat));
 			if (seeds != 0)
-				location.getWorld().dropItem(location, new ItemStack(Material.SEEDS, seeds));
+				location.getWorld().dropItem(location, new ItemStack(Material.WHEAT_SEEDS, seeds));
 			if (potatoes != 0)
-				location.getWorld().dropItem(location, new ItemStack(Material.POTATO_ITEM, potatoes));
+				location.getWorld().dropItem(location, new ItemStack(Material.POTATO, potatoes));
 			if (carrots != 0)
-				location.getWorld().dropItem(location, new ItemStack(Material.CARROT_ITEM, carrots));
+				location.getWorld().dropItem(location, new ItemStack(Material.CARROT, carrots));
 
 			// Damage the hoe due to tilling
 			if (blocksHarvested > 0)

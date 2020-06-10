@@ -60,7 +60,7 @@ public class ItemEffectThaumicBolt extends ItemEffectWand
 		ProjectileThaumicBolt projectile = new ProjectileThaumicBolt(player, false, damage, damageIncrease, false);
 		projectile.setVelocity(player.getEyeLocation().getDirection().multiply(speed));
 		ProjectileHandler.addProjectile(projectile);
-		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ENDERMEN_HURT, 0.5f, -0.7f);
+		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_HURT, 0.5f, -0.7f);
 	}
 
 	@Override

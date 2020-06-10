@@ -76,7 +76,7 @@ public class ItemEffectPowerline extends ItemEffectWand
 				setChargeInItem(item, charge - chargeCostPerLightningBolt);
 				setCooldownTime(player.getUniqueId(), lightningBoltCooldown);
 				ParticleEffect.play(ParticleType.SNOWBALL, entity.getEyeLocation(), 0.05f, 8, 0.7f);
-				entity.getWorld().playSound(entity.getEyeLocation(), Sound.ENTITY_FIREWORK_BLAST, 0.6f, 0.0f);
+				entity.getWorld().playSound(entity.getEyeLocation(), Sound.ENTITY_FIREWORK_ROCKET_BLAST, 0.6f, 0.0f);
 				break;
 			}
 		}

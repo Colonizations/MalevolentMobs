@@ -120,7 +120,7 @@ public class ItemEffectGrowth extends ItemEffect
 		}
 
 		// Progress crops' growth
-		else if (centerType == Material.CROPS || centerType == Material.CARROT || centerType == Material.POTATO || centerType == Material.MELON_STEM || centerType == Material.PUMPKIN_STEM)
+		else if (centerType == Material.FARMLAND || centerType == Material.CARROT || centerType == Material.POTATO || centerType == Material.MELON_STEM || centerType == Material.PUMPKIN_STEM)
 		{
 			if (meta < 7) // The crops have a meta of 7 when they are fully grown
 			{

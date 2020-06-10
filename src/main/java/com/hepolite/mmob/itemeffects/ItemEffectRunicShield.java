@@ -47,7 +47,7 @@ public class ItemEffectRunicShield extends ItemEffectCharger
 		damageItem(item, durabilityCostPerDamage * damageBlocked);
 
 		if (damageBlocked > 0.0)
-			player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ENDERDRAGON_HURT, 0.75f, 0.0f);
+			player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ENDER_DRAGON_HURT, 0.75f, 0.0f);
 
 		// Update the charge
 		setChargeInItem(item, charge - (float) damageBlocked);
