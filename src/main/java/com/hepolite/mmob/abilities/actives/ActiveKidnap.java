@@ -1,5 +1,6 @@
 package com.hepolite.mmob.abilities.actives;
 
+import org.bukkit.Sound;
 import java.util.List;
 
 import org.bukkit.Location;
@@ -59,17 +60,17 @@ public class ActiveKidnap extends Active
 		double direction = random.nextDouble() * 2.0 * Math.PI;
 		Location location = mob.getEntity().getLocation().add(distance * Math.sin(direction), 0.0, distance * Math.cos(direction));
 		location = Common.getSafeLocation(location);
-		target.getWorld().playSound(target.getLocation(), Sound.ENTITY_ENDERMEN_TELEPORT, 1.0f, 0.0f);
+		target.getWorld().playSound(target.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0f, 0.0f);
 		target.teleport(location, TeleportCause.PLUGIN);
-		target.getWorld().playSound(location, Sound.ENTITY_ENDERMEN_TELEPORT, 1.0f, 0.0f);
+		target.getWorld().playSound(location, Sound.ENTITY_ENDERMAN_TELEPORT, 1.0f, 0.0f);
 
 		// Find a position that is safe and teleport the self there
 		distance = 5.0f + 5.0f * random.nextFloat();
 		direction = random.nextDouble() * 2.0 * Math.PI;
 		location = location.add(distance * Math.sin(direction), 0.0, distance * Math.cos(direction));
 		location = Common.getSafeLocation(location);
-		target.getWorld().playSound(mob.getEntity().getLocation(), Sound.ENTITY_ENDERMEN_TELEPORT, 1.0f, 0.0f);
+		target.getWorld().playSound(mob.getEntity().getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0f, 0.0f);
 		mob.getEntity().teleport(location, TeleportCause.PLUGIN);
-		target.getWorld().playSound(location, Sound.ENTITY_ENDERMEN_TELEPORT, 1.0f, 0.0f);
+		target.getWorld().playSound(location, Sound.ENTITY_ENDERMAN_TELEPORT, 1.0f, 0.0f);
 	}
 }

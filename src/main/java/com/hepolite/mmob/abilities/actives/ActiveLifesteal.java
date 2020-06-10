@@ -64,7 +64,7 @@ public class ActiveLifesteal extends Active
 		Common.doHeal(damageToHealthFactor * damage, mob.getEntity(), RegainReason.MAGIC);
 
 		// Tell the player they were drained
-		target.getWorld().playSound(target.getLocation(), Sound.ENTITY_MAGMACUBE_JUMP, 1.0f, 0.333f);
+		target.getWorld().playSound(target.getLocation(), Sound.ENTITY_MAGMA_CUBE_JUMP, 1.0f, 0.333f);
 		ParticleEffect.play(ParticleType.HEART, target.getLocation(), 0.04f, 4, 1.2f);
 		ParticleEffect.play(ParticleType.REDSTONE, target.getLocation(), 0.04f, 7, 1.2f);
 	}

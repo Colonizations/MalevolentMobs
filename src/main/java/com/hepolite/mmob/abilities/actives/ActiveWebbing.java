@@ -110,7 +110,7 @@ public class ActiveWebbing extends ActiveArea
 
 						// Change the block if it is relevant
 						if (random.nextFloat() < 0.75f)
-							BlockManager.setBlock(location.getWorld(), location.getBlockX() + x, y, location.getBlockZ() + z, Material.WEB, true, duration);
+							BlockManager.setBlock(location.getWorld(), location.getBlockX() + x, y, location.getBlockZ() + z, Material.COBWEB, true, duration);
 					}
 				}
 			}

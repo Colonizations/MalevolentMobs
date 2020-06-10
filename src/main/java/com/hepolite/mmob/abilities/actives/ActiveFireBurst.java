@@ -1,6 +1,6 @@
 package com.hepolite.mmob.abilities.actives;
 
-import org.bukkit.Sound;
+import org.bukkit.Sound;	
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
@@ -63,7 +63,7 @@ public class ActiveFireBurst extends ActiveTargetSplash
 	@Override
 	protected void displayAttack(LivingEntity target, float range)
 	{
-		target.getWorld().playSound(target.getLocation(), Sound.ENTITY_FIREWORK_LARGE_BLAST, 1.0f, 0.0f);
+		target.getWorld().playSound(target.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LARGE_BLAST, 1.0f, 0.0f);
 		ParticleEffect.play(ParticleType.FLAME, target.getLocation(), 0.15f, 35, 1.0f);
 	}
 }

@@ -91,8 +91,8 @@ public class ActiveTeleport extends Active
 		if (targetLocation != null)
 		{
 			targetLocation = Common.getSafeLocation(targetLocation);
-			targetLocation.getWorld().playSound(targetLocation, Sound.ENTITY_ENDERMEN_TELEPORT, 1.0f, 0.0f);
-			mobLocation.getWorld().playSound(mobLocation, Sound.ENTITY_ENDERMEN_TELEPORT, 1.0f, 0.0f);
+			targetLocation.getWorld().playSound(targetLocation, Sound.ENTITY_ENDERMAN_TELEPORT, 1.0f, 0.0f);
+			mobLocation.getWorld().playSound(mobLocation, Sound.ENTITY_ENDERMAN_TELEPORT, 1.0f, 0.0f);
 			mob.getEntity().teleport(targetLocation, TeleportCause.PLUGIN);
 		}
 	}

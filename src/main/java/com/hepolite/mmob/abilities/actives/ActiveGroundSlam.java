@@ -89,7 +89,7 @@ public class ActiveGroundSlam extends Active
 		{
 			if (inAirTimer >= 10)
 			{
-				mob.getEntity().getWorld().playSound(mob.getEntity().getLocation(), Sound.ENTITY_FIREWORK_LARGE_BLAST, 1.0f, 0.0f);
+				mob.getEntity().getWorld().playSound(mob.getEntity().getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LARGE_BLAST, 1.0f, 0.0f);
 
 				// Knock up all entities in range, that are standing on the ground
 				List<LivingEntity> entities = Common.getEntitiesInRange(mob.getEntity().getLocation(), maxRange);
