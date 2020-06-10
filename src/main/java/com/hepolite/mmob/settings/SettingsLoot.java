@@ -441,7 +441,7 @@ public class SettingsLoot
 			writeItem(setting, name + i++, Material.IRON_SWORD, 0, 1, 15.0f, 1, 0);
 			writeItem(setting, name + i++, Material.BOW, 0, 1, 15.0f, 1, 0);
 			writeItem(setting, name + i++, Material.IRON_PICKAXE, 0, 1, 6.0f, 1, 0);
-			writeItem(setting, name + i++, Material.IRON_SPADE, 0, 1, 6.0f, 1, 0);
+			writeItem(setting, name + i++, Material.IRON_SHOVEL, 0, 1, 6.0f, 1, 0);
 			writeItem(setting, name + i++, Material.IRON_AXE, 0, 1, 6.0f, 1, 0);
 			writeItem(setting, name + i++, Material.IRON_HOE, 0, 1, 4.0f, 1, 0);
 			writeItem(setting, name + i++, Material.CHEST, 0, 1, 10.0f, 1, 0);
@@ -463,7 +463,7 @@ public class SettingsLoot
 			writeItem(setting, name + i++, Material.DIAMOND_SWORD, 0, 1, 15.0f, 1, 0);
 			writeItem(setting, name + i++, Material.BOW, 0, 1, 15.0f, 1, 0);
 			writeItem(setting, name + i++, Material.DIAMOND_PICKAXE, 0, 1, 10.0f, 1, 0);
-			writeItem(setting, name + i++, Material.DIAMOND_SPADE, 0, 1, 10.0f, 1, 0);
+			writeItem(setting, name + i++, Material.DIAMOND_SHOVEL, 0, 1, 10.0f, 1, 0);
 			writeItem(setting, name + i++, Material.DIAMOND_AXE, 0, 1, 10.0f, 1, 0);
 			writeItem(setting, name + i++, Material.DIAMOND_HOE, 0, 1, 7.5f, 1, 0);
 			writeItem(setting, name + i++, Material.CHEST, 0, 1, 8.0f, 1, 0);
@@ -478,7 +478,7 @@ public class SettingsLoot
 			writeItem(setting, name + i++, Material.DIAMOND_SWORD, 0, 1, 3.0f, 2, 1);
 			writeItem(setting, name + i++, Material.BOW, 0, 1, 3.0f, 2, 1);
 			writeItem(setting, name + i++, Material.DIAMOND_PICKAXE, 0, 1, 2.0f, 2, 1);
-			writeItem(setting, name + i++, Material.DIAMOND_SPADE, 0, 1, 2.0f, 2, 1);
+			writeItem(setting, name + i++, Material.DIAMOND_SHOVEL, 0, 1, 2.0f, 2, 1);
 			writeItem(setting, name + i++, Material.DIAMOND_AXE, 0, 1, 2.0f, 2, 1);
 			writeItem(setting, name + i++, Material.DIAMOND_HOE, 0, 1, 2.0f, 2, 1);
 
@@ -495,7 +495,7 @@ public class SettingsLoot
 		writeItem(setting, name + i++, Material.DIAMOND_SWORD, 0, 1, 0.15f, "&9The Mithril Sword of Legends", null, "#random", 3, 0, null, null, null);
 		writeItem(setting, name + i++, Material.BOW, 0, 1, 0.15f, "&9The Glacial Arch of Legends", null, "#random", 3, 0, null, null, null);
 		writeItem(setting, name + i++, Material.DIAMOND_PICKAXE, 0, 1, 0.1f, "&9The Mithril Pickaxe of Legends", null, "#random", 3, 0, null, null, null);
-		writeItem(setting, name + i++, Material.DIAMOND_SPADE, 0, 1, 0.1f, "&9The Mithril Spade of Legends", null, "#random", 3, 0, null, null, null);
+		writeItem(setting, name + i++, Material.DIAMOND_SHOVEL, 0, 1, 0.1f, "&9The Mithril Spade of Legends", null, "#random", 3, 0, null, null, null);
 		writeItem(setting, name + i++, Material.DIAMOND_AXE, 0, 1, 0.1f, "&9The Mithril Axe of Legends", null, "#random", 3, 0, null, null, null);
 		writeItem(setting, name + i++, Material.DIAMOND_HOE, 0, 1, 0.08f, "&9The Mithril Hoe of Legends", null, "#random", 3, 0, null, null, null);
 
@@ -556,6 +556,7 @@ public class SettingsLoot
 	}
 
 	/** Writes a simple enchantment to the given settings file, under the given property */
+	@SuppressWarnings("deprecation")
 	public static void writeEnchantment(Settings setting, String property, Enchantment enchantment, int level)
 	{
 		setting.addDefault(property + ".name", enchantment.getName().toLowerCase());

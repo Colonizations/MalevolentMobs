@@ -39,13 +39,13 @@ public class ProjectileBoltWither extends ProjectileBolt
 	{
 		super.onTick();
 		if (++soundTimer % 10 == 0)
-			position.getWorld().playSound(position, Sound.ENTITY_ENDERDRAGON_FLAP, 1.0f, 0.0f);
+			position.getWorld().playSound(position, Sound.ENTITY_ENDER_DRAGON_FLAP, 1.0f, 0.0f);
 	}
 
 	@Override
 	protected void applyEffects(Location location)
 	{
-		location.getWorld().playSound(location, Sound.ENTITY_ENDERDRAGON_HURT, 1.0f, 0.0f);
+		location.getWorld().playSound(location, Sound.ENTITY_ENDER_DRAGON_HURT, 1.0f, 0.0f);
 
 		// Apply wither to all entities within the range
 		List<LivingEntity> entities = Common.getEntitiesInRange(location, range);

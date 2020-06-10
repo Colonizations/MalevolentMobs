@@ -102,7 +102,7 @@ public class BlockManager
 			if (block.getType() == newMaterial || block.getType() == Material.AIR || block.getType() == Material.WATER)
 			{
 				block.setType(oldMaterial);
-				block.setData(oldMetaData);
+				((Object) block).setData(oldMetaData);
 			}
 		}
 	}

@@ -50,7 +50,7 @@ public class ProjectileThaumicBolt extends ProjectileBolt
 			}
 		}
 		ParticleEffect.play(ParticleType.SPELL_WITCH, location, 0.07f, 18, 1.5f);
-		location.getWorld().playSound(location, Sound.ENTITY_ENDERDRAGON_HURT, 0.5f, 0.5f);
+		location.getWorld().playSound(location, Sound.ENTITY_ENDER_DRAGON_HURT, 0.5f, 0.5f);
 	}
 
 	@Override

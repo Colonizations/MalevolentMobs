@@ -75,7 +75,7 @@ public class ItemEffectGrowth extends ItemEffect
 		else if (centerType == Material.GRASS)
 		{
 			// Want to grow crops as if they were grown with bonemeal
-			PlayerInteractEvent bonemealEvent = new PlayerInteractEvent(player, Action.RIGHT_CLICK_BLOCK, new ItemStack(Material.INK_SACK, 1, (short) 15), centerBlock, event.getBlockFace());
+			PlayerInteractEvent bonemealEvent = new PlayerInteractEvent(player, Action.RIGHT_CLICK_BLOCK, new ItemStack(Material.INK_SAC, 1, (short) 15), centerBlock, event.getBlockFace());
 			Common.postEvent(bonemealEvent);
 			if (!bonemealEvent.isCancelled())
 			{
@@ -93,10 +93,10 @@ public class ItemEffectGrowth extends ItemEffect
 								{
 									flowersGrown++;
 									if (random.nextFloat() < 0.1f) // Ten flowers are available in total; two different block ids are used, though
-										block.setType(Material.YELLOW_FLOWER);
+										block.setType(Material.DANDELION);
 									else
 									{
-										block.setType(Material.RED_ROSE);
+										block.setType(Material.POPPY);
 										block.setData((byte) random.nextInt(10)); // At most nine different flowers are possible on this block id
 									}
 								}
@@ -104,7 +104,7 @@ public class ItemEffectGrowth extends ItemEffect
 								else if (random.nextFloat() < 0.2f)
 								{
 									flowersGrown++;
-									block.setType(Material.LONG_GRASS);
+									block.setType(Material.TALL_GRASS);
 									if (random.nextFloat() < 0.8f)
 										block.setData((byte) 1); // Normal long grass
 									else
@@ -131,7 +131,7 @@ public class ItemEffectGrowth extends ItemEffect
 		}
 
 		// Grow flowers/tallgrass on grass blocks
-		else if (centerType == Material.SAPLING)
+		else if (centerType == Material.OAK_SAPLING)
 		{
 			// Select the tree type
 			TreeType type = null;
@@ -194,7 +194,7 @@ public class ItemEffectGrowth extends ItemEffect
 		}
 
 		// Grow cactus and sugar canes
-		else if (centerType == Material.CACTUS || centerType == Material.SUGAR_CANE_BLOCK)
+		else if (centerType == Material.CACTUS || centerType == Material.SUGAR_CANE)
 		{
 			// Figure out how tall the stack is, and grow it up to four blocks
 			int count = 0;

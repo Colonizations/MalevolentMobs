@@ -58,8 +58,8 @@ public abstract class ItemEffectChest extends ItemEffect
 		{
 			damageItem(item, 10000.0);
 
-			block.getWorld().playSound(block.getLocation(), Sound.ENTITY_FIREWORK_LARGE_BLAST_FAR, 1.0f, -0.4f);
-			block.getWorld().playSound(block.getLocation(), Sound.ENTITY_FIREWORK_TWINKLE_FAR, 1.0f, 0.6f);
+			block.getWorld().playSound(block.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LARGE_BLAST_FAR, 1.0f, -0.4f);
+			block.getWorld().playSound(block.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_TWINKLE_FAR, 1.0f, 0.6f);
 
 			// Get the chest inventory and copy over the list of valid items
 			Inventory inventory = ((Chest) block.getState()).getBlockInventory();
@@ -107,7 +107,7 @@ public abstract class ItemEffectChest extends ItemEffect
 		// Generate the skull item
 		NBTTag tag = new NBTTag();
 		tag.setString("SkullOwner", player.getName());
-		ItemStack skull = NBTAPI.setTag(NBTAPI.getItemStack(Material.SKULL_ITEM, 1, (short) 3), tag);
+		ItemStack skull = NBTAPI.setTag(NBTAPI.getItemStack(Material.SKELETON_SKULL, 1, (short) 3), tag);
 
 		ItemMeta meta = skull.getItemMeta();
 		meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&c&lYo&ku W&r&c&lill b&4e th&r&o&c&le &0ne&kxt.&r&c&l.."));
